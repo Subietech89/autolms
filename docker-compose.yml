@@ -13,3 +13,4 @@ services:
       # so your users and courses aren't lost when the container restarts.
       - ./pb_data:/pb/pb_data
     restart: unless-stopped
+
