@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  autolms:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: autolms_production
+    ports:
+      - "8090:8090"
+    volumes:
+      # This maps the PocketBase database folder to your server's filesystem
+      # so your users and courses aren't lost when the container restarts.
+      - ./pb_data:/pb/pb_data
+    restart: unless-stopped
